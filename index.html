@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Encriptador y Desencriptador</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+  }
+  textarea {
+    width: 80%;
+    height: 100px;
+    margin: 10px auto;
+    padding: 5px;
+  }
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<h2>Encriptador y Desencriptador</h2>
+
+<textarea id="inputText" placeholder="Introduce tu texto aquí"></textarea><br>
+<button onclick="encryptText()">Encriptar</button><br>
+<textarea id="encryptedText" placeholder="Texto encriptado"></textarea><br>
+<button onclick="decryptText()">Desencriptar</button><br>
+<textarea id="decryptedText" placeholder="Texto desencriptado"></textarea>
+
+<script>
+  function encryptText() {
+    var inputText = document.getElementById('inputText').value;
+    var encryptedText = btoa(inputText);
+    document.getElementById('encryptedText').value = encryptedText;
+  }
+
+  function decryptText() {
+    var encryptedText = document.getElementById('encryptedText').value;
+    var decryptedText = atob(encryptedText);
+    document.getElementById('decryptedText').value = decryptedText;
+  }
+</script>
+
+</body>
+</html>
